@@ -1,0 +1,55 @@
+{
+  "name": "bengala",
+  "description": "web app | red de negocios",
+  "version": "0.1.0",
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "page": "^1.6.4",
+    "qs": "^6.0.0",
+    "express": "~4.13.4",
+    "babel-cli": "~6.6.5",
+    "babel-preset-es2015": "^6.1.18",
+    "babelify": "^7.2.0",
+    "browserify": "^12.0.1",
+    "body-parser": "~1.15.0",
+    "mongoose": "~4.4.6",
+    "cookie-parser": "~1.4.1",
+    "express-session": "~1.13.0",
+    "passport": "~0.3.2",
+    "passport-local": "~1.0.0",
+    "passport-twitter": "~1.0.4",
+    "passport-facebook": "~2.1.0",
+    "passport-linkedin": "~1.0.0",
+    "aws-sdk": "~2.2.43",
+    "multer": "~1.1.0",
+    "multer-s3": "~1.4.1",
+    "react": "~15.0.1",
+    "react-dom": "~15.0.1",
+    "babel-preset-react": "~6.5.0",
+    "swig": "~1.4.2",
+    "path": "~0.12.7",
+    "react-router": "~2.3.0",
+    "uid": "0.0.2",
+    "socket.io": "~1.4.5",
+    "socket.io-client": "~1.4.5"
+  },
+  "devDependencies": {
+    "babelify": "^7.2.0",
+    "browserify": "^12.0.1"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "scripts": {
+    "public": "mkdir -p public",
+    "fonts": "mkdir -p public/fonts",
+    "build-js": "NODE_PATH=. browserify -t [ babelify --presets [ es2015 react ] ] src/client/index.js > public/app.js",
+    "copy-files": "cp src/client/main.css public/app.css && cp src/client/index.html public/index.html && cp src/client/fonts/icomoon.eot public/fonts/icomoon.eot && cp src/client/fonts/icomoon.svg public/fonts/icomoon.svg && cp src/client/fonts/icomoon.ttf public/fonts/icomoon.ttf && cp src/client/fonts/icomoon.woff public/fonts/icomoon.woff",
+    "build-styles": "npm run public && npm run fonts && npm run copy-files",
+    "build": "npm run public && npm run fonts && npm run build-js && npm run copy-files",
+    "dist": "babel src/server/index.js src/server/**/**/*.js --out-dir dist --presets es2015",
+    "serve": "NODE_PATH=. babel-node src/server --presets es2015",
+    "start-without-js": "npm run build-styles && npm run serve",
+    "start": "npm run build && npm run serve"
+  }
+}

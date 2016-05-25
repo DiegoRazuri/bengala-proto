@@ -1,0 +1,1223 @@
+@import "style.styl"
+
+*
+
+	margin 0px
+	padding 0px
+	max-width auto
+	font-family "Open Sans"
+
+.btnLaunchCallForm
+	background-color  #fc5d17
+	border none
+	border-radius 4px
+	color white
+	padding 3px 17px
+	margin 0px 0px 0px 3%
+	cursor pointer
+
+.scoreWidget
+	display flex
+	li
+		background-color red
+		width 18px
+		height 18px
+		line-height 18px
+		border-radius 7px
+		overflow hidden
+
+		.heart
+			color white
+			display block
+			text-align center
+			font-size 0.8em
+			vertical-align middle
+			position relative
+			top 0px
+
+							
+
+					
+
+.inputFile
+	overflow hidden
+	cursor pointer
+	position relative
+	margin 8px 0px 13px 0px
+	width 150px
+	height 20px
+	border solid 2px #a5a7aa
+	padding 2px 10px 9px 10px
+	border-radius 8px
+
+	.ico
+		color #a5a7aa
+		vertical-align middle
+		margin-right 6px
+
+	.btnName
+		color #a5a7aa
+		font-size 0.8em
+		text-align center
+		margin 0px
+
+	input
+		outline 0
+		position absolute
+		cursor pointer
+		opacity 0
+		top 0
+		left 0px
+		height 100%
+		width 100%
+
+body
+	display block
+	margin 0px
+	padding 0px
+	width auto
+
+	.principalContainer
+		width auto
+		height 100%
+
+		.container
+			height 100%
+			background-color rgba(165, 167, 170, 0.16)
+			margin 0px
+			padding 0px
+			position absolute
+			width 100%
+
+			header
+				position fixed
+				width 100%
+				display block
+				height 45px
+				border solid 1px black
+				background-color #404041
+
+				nav
+					height 100%
+					.headerLogo, .searchBox, .generalAdmPanel
+						display inline-block
+
+					.headerLogo
+						height 40px
+						margin 2px 0px 0px 88px
+						img
+							height 100%
+					.searchBox
+						max-width 400px
+						margin 0px 23%
+						position relative
+						top -13px
+						
+						span
+							width 12% 
+							display inline-block
+							font-size 1em
+							vertical-align middle
+							text-align center
+							height 20px
+							background -webkit-linear-gradient(#f4791f,#ec4524)
+							-webkit-background-clip text
+							-webkit-text-fill-color transparent
+							color #ec4524
+						input
+							width 74%
+							display inline-block
+							height auto
+							color white
+							background-color #697a7f
+							border-radius 3px
+							border none
+							height 22px
+							color #e1ecef
+							padding 1px 15px
+							
+					.generalAdmPanel
+						width 200px
+						position absolute
+						height 45px
+						margin-left 1%
+
+						.wrapperBtnGeneralAdmPanel
+								height 45px
+								
+							.btnGeneralPanel
+								display inline-block
+								margin 0px 5px
+								
+							.icos
+								color #697a7f
+								font-size 1.5em
+								position relative
+								top -3px
+
+							
+								
+							.enterpriseAvatar, .userAvatar
+								width 27px
+								height 27px
+								background-color white
+								border-radius 50%
+								overflow hidden
+								margin-top 10px
+
+								img
+									width 27px
+				
+						.admOptionList, .admEnterpriseList
+							.triangle
+								width 0
+								display block
+								height 0
+								border-right 7px solid transparent
+								border-top 7px solid transparent
+								border-left 7px solid transparent
+								border-bottom 11px solid #404041
+								position relative
+								top -6px
+
+							ul
+								background-color #404041
+								width 107px
+								border-radius 4px
+								list-style none
+								position relative
+								top -16px
+								margin 10px 0px 0px 0px
+								.options
+									cursor pointer
+									color #a5a7aa
+									text-align center
+									font-size 0.7em
+									padding 4px 0px 6px 0px
+									
+									a
+										text-decoration none
+										font-size 1em
+										color #a5a7aa
+										
+								.listUnderline
+									border-bottom solid 1px #282828
+									
+						.admOptionList
+							.triangle
+								left 147px
+							ul
+								left 141px
+							
+						.admEnterpriseList
+							.triangle
+								left 110px
+							ul
+								left 102px
+
+
+			.panelUserPlattform
+				background-color #404041
+				display block
+				width 170px
+				height 100%
+				position fixed
+				margin 47px 0px 0px 0px
+				
+				ul
+					height auto
+					li
+						color #a5a7aa
+						font-size 0.8em
+						border-bottom 2px solid #282828
+						padding 14px 0px
+						cursor pointer
+						
+						p
+							width 90px
+							margin 0px auto
+
+				
+			#wrapperCallForm, #wrapperQuotationForm, #wrapperCreateEnterpriseForm, #wrapperCallDetailView
+				display none
+				position absolute
+				top 0px
+				background-color white
+				z-index 99999
+				height 100%
+				width 100%
+				.wrapperPopup
+					width 73%
+					margin 50px auto
+					height 70%
+					.formHeader
+						img
+							width 120px
+						span
+							float right
+							color #a5a7aa
+							font-size 2.3em
+							cursor pointer
+							
+					.formContent
+						margin 40px 0px 0px 90px
+						display inline-block
+						width 59%
+						.formTitle
+							font-size 1.8em
+							font-weight 600
+							color #404041
+
+						.underline
+							background-color #a5a7aa
+							height 5px
+							width 80px
+							margin-top 7px
+							margin-bottom 30px
+							border-radius 3px
+							display block
+						label
+							font-size 0.9em
+							color #404041
+							display block
+
+						.formInput, .formInputDate
+							display block
+							border-radius 6px
+							border solid 1px #a5a7aa
+							padding 6px 10px
+							font-size 1em
+							color #404041
+							margin 6px 0px 10px 0px
+
+						.formInput
+							width 97%
+						.formInputDate
+							width 30%
+						.btnCreateCall
+							display block
+							background-color #fc5d17
+							height 40px
+							width 80px
+							border none
+							border-radius 6px
+							color white
+							font-size 1.1em
+							font-weight 300
+							float right
+
+					.wrapperB
+						display inline-block
+						width 20%
+						margin 120px 0px 0px 41px
+						vertical-align top
+						ul
+							list-style none
+							margin-top 10px
+							
+							li
+								width 60px
+								height 60px
+								background-color white
+								border-radius 8px
+								img
+									width 100%	
+						.inputFile
+							overflow hidden
+							cursor pointer
+							position relative
+							margin 8px 0px 13px 0px
+							width 150px
+							height 20px
+							border solid 2px #a5a7aa
+							padding 2px 10px 9px 10px
+							border-radius 8px
+
+							.ico
+								color #a5a7aa
+								vertical-align middle
+								margin-right 6px
+
+							.btnName
+								color #a5a7aa
+								font-size 0.8em
+								text-align center
+								margin 0px
+
+							input
+								outline 0
+								position absolute
+								cursor pointer
+								opacity 0
+								top 0
+								left 0px
+								height 100%
+								width 100%
+
+			#wrapperCallDetailView
+				.wrapperPopup
+					.formContent
+						.contactInfo				
+							width 100%
+							display flex
+							border-bottom solid 1px #ccc
+							.grid
+								width 50%
+								p
+									font-size 0.7em
+									color #24b6d2
+								figure
+									border-radius 50%
+									overflow hidden
+									width 50px
+									height 50px
+									margin 10px 0px
+							.gridB
+								text-align right
+								ul
+									list-style none
+									float right
+									li
+										margin-top 10px
+										figure
+											width 50px
+											height 50px
+											border-radius 4px
+											overflow hidden
+											img
+												width 100%
+
+
+			#wrapperQuotationForm
+				#quotationForm
+					.formContent
+						width 88%
+						.quotationTitle
+							font-size 1.1em
+							font-weight 600
+							color #404041
+							text-transform capitalize
+
+						#btnCreateQuotation
+							float right
+							position relative
+							bottom 40px
+							padding 7px 12px
+							border none
+							border-radius 5px
+							text-align center
+							height 40px
+							width 80px
+							background-color #31bda5
+							color  white
+							font-size 1em
+
+						.divisor
+							margin-top 26px
+							border-top solid 1px #ccc
+							padding-top 30px
+
+						.gridProductDescription
+							display flex
+							div
+								input
+									margin-right 0px
+
+							.gridA
+								width 24%
+								input
+									width 86%
+							.gridB
+								width 49%
+								margin 0px 4%
+								
+								input
+									width 94%
+							.gridC
+								width 20%
+								#price_qf
+									width 85%
+								.inputFile
+									width 84%
+							
+			#wrapperUserprofileView
+				display none
+				position absolute
+				top 0px
+				background-color rgba(0, 0, 0, 0.7)
+				z-index 9999
+				height 100%
+				width 100%
+				.wrapperContentUserprofileView
+					width 70%
+					height auto
+					margin 120px auto
+					.icoClose
+						float right
+						font-size 2.3em
+						position relative
+						top -27px
+						color #fc5d17
+						left -18px
+					.userprofileContent
+						display flex
+						flex-wrap wrap
+						.gridA
+							width 30%
+							display flex
+							height 120px
+							margin-right 7px
+							margin-bottom 7px
+
+							figure
+								height 120px
+								width 120px
+								overflow hidden
+								border-radius 50%
+
+								img
+									width 100%
+
+							.wrapperBtnActionsUserprofile
+								width 110px
+								margin 0px auto
+								padding 21px 0px
+								button
+									display block
+									width 100%
+									border-radius 7px
+									margin 8px 0px
+									padding 3px 3px 5px 3px
+									border none
+									color white
+
+								.addContact
+									background-color #24b6d2
+								.sendMessage
+									background-color #fc5d17
+						.gridB
+							width 68%
+							display flex
+							background-color white
+							border-top-right-radius 13px
+							margin-bottom 7px
+							
+							.nameContact
+								width 45%
+								height 90px
+								margin 15px 0px 0px 0px
+								border-right solid 2px rgba(165, 167, 170, 0.37)
+								h1
+									font-size 1.6em
+									color #282828
+									text-align center
+									margin 10px 0px 5px 0px
+								h2
+									font-size 1.3em
+									color #404041
+									text-align center
+									font-weight 300
+
+							.infoContact
+								display block
+								list-style none
+								padding 11px 0px
+								height 68px
+								display block
+								margin 15px 20px
+
+
+								li
+									font-size 0.9em
+									margin 7px 0px
+									color #a5a7aa
+									span
+										display inline-block
+									p
+										display inline-block
+										margin-left 30px
+
+						.gridC
+							background-color white
+							width 30%
+							min-height 172px
+							margin-right 7px
+							border-bottom-left-radius 13px
+							
+							.btnUserprofiles
+								border-bottom solid 1px #ccc
+								font-size 1em
+								color #a5a7aa
+								font-weight 300
+								height 50px
+								line-height 50px
+								cursor pointer
+								width 100%
+								top 0
+								
+								span, p
+									display inline-block
+									
+								span
+									font-size 1em
+									margin 0px 20px 0px 20px
+									position relative
+									top 1px
+								p
+									margin-left 5px
+									color #404041
+									font-size 0.9em
+								.contactLenght
+									float right
+									margin-right 30px
+									
+						.gridD
+							background-color white
+							width 68%
+							border-bottom-right-radius	13px
+							ul
+								list-style none
+								padding 40px
+								display flex
+								li
+									color #404041
+									img
+										border-radius 50%
+										width 80px
+										display block
+										margin 0px auto
+									p
+										text-align  center
+									
+									.btnSendMessage
+										font-size 0.8em
+										margin 10px auto 0px auto
+										
+									.userName
+										font-weight bolder
+										font-size 0.9em
+										
+									.userPosition
+										font-weight 300
+
+
+
+				
+
+			.contairnerPrinpipalComponents
+				max-width 88%
+				margin 0px 0px 0px 170px
+				height 100%
+				overflow hidden
+				.callView, .sellView
+					width 90%
+					margin 80px auto 0px auto
+					h1
+						font-weight 400
+						font-size 1.5em
+						color #404041
+						margin 45px 0px 12px 0px
+
+					.titleBorder
+						background-color #a5a7aa
+						width 60px
+						height 4px
+						display block
+					.callControlPanel, .sellControlPanel
+						margin 30px 0px
+						
+						nav
+							display  inline-block
+							max-width 650px
+							ul
+								list-style none
+								display flex
+								li
+									margin 0px 5px
+									
+									span
+										border-radius 50%
+										background-color white
+										font-size 0.7em
+										font-weight 600
+										height 30px
+										width 30px
+										padding 3px
+										color #697a7f
+
+									a
+										text-decoration none
+										font-size 0.8em
+										margin 0px 7px
+										color #697a7f
+
+								.btnNavFilterSeparatorafter
+									content "|"
+									color #697a7f
+									
+						
+
+					.callBoxList, .sellBoxList
+						.callBoxTableTitles, .sellBoxTableTitles
+							display flex
+							list-style none
+							
+							li
+								margin 0px 2%
+								font-size 0.8em
+								color #404041
+								
+							.buyerField
+								width 13%
+							.calltitleField
+								width 15%
+								
+						.box
+							background-color white
+							display flex
+							height 50px
+							margin 10px 0px
+							
+							.pieceCall, .pieceSell
+								color #697a7f
+								font-weight 500
+								height 30px
+								line-height 30px
+								margin 9px 2%
+							.pieceCallDate, .pieceSellDate
+								color #404041
+							.statusOpen
+								background-color #24b6d2
+							.statusClose
+								background-color #31bda5
+								
+							.buyerImage, .providerImage
+								height 30px
+								width 30px
+								border-radius 50%
+								overflow hidden
+								img
+									height 30px
+							
+							.buyerImage
+								margin-left 18px
+							.pieceCallTitle, .pieceCallStatus, .pieceCallDate, .pieceCallBtnQuotation, .pieceSellTitle, .pieceSellStatus, .pieceSellDate, .pieceSellBtnQuotation
+								text-align center
+								height 30px
+								line-height 30px
+								font-size 0.8em
+								padding 0px 6px
+								
+      						.pieceCallStatus, .pieceSellStatus
+								text-transform capitalize
+								border-radius 3px
+								color white
+
+    						.pieceCallBtnQuotation, .pieceCallTitle, .pieceSellBtnQuotation, .pieceSellTitle
+								text-decoration none
+								text-transform capitalize
+								border solid 1px #a5a7aa
+								border-radius 3px
+							.pieceCallWS, .providerImage, .pieceSellWS
+								cursor pointer
+							.pieceCallTitle, .pieceSellTitle
+								text-align left
+								cursor pointer
+								width 110px
+				.chatView
+					height 100%
+					margin 46px auto 0px auto
+					.chatStage
+						height 100%
+						float left
+						width 80%
+
+						.navIndividualChat
+							background-color rgba(165, 167, 170, 0.23)
+							height 48px
+							line-height 48px
+							width 100%
+							h1, h2
+							
+								display inline-block
+								text-transform capitalize
+								color #404041
+								font-size 1.3em
+								
+							h1
+								margin-left 18px
+							h2
+								font-weight 300
+								margin 0px 5px
+
+						.chatWrapper
+							background-color white
+							height 78%
+							overflow-y scroll
+							.messagePiece
+								padding 16px
+								
+								img
+									border-radius 50%
+									height 45px
+									display inline-block
+								.textWrapper
+									display inline-block
+									
+									.userMessageName, .message
+										display block
+										vertical-align top
+										margin 5px 10px
+										font-size 0.8em
+										color #404041
+										
+									.userMessageName
+										font-weight 600
+										
+																	
+						.chatForm
+							height 9%
+							width 100%
+							background-color rgba(165, 167, 170, 0.23)
+							bottom 0
+							form
+								padding 11px 0px
+								width 100%
+								input
+									width 80%
+									margin 0px auto
+									display block
+									height 30px
+								
+					.wrapperWorkingStationList
+						float right
+						width 20%
+						height 100%
+						.headerWorkingStationList
+							background-color white
+							line-height 45px
+							height 45px
+							border-bottom solid 2px #24b6d2
+
+							p
+								display inline
+								font-size 0.9em
+								font-weight 600
+								color #404041
+
+						ul
+							height 87%
+							overflow-y scroll
+							
+							li
+								height 55px
+								border-bottom solid 1px #a5a7aa
+								background-color white
+								padding 12px 12px
+								cursor pointer
+								img
+									border-radius 50%
+									display inline-block
+									position relative
+									top 4px
+
+    							.wsRowWrapper
+									margin-left 10px
+									display inline-block
+									color #697a7f
+
+    								.wsRowTitle
+										font-size 0.9em
+										font-weight 600
+									.wsRowName
+										font-size 0.7em
+										font-weight 600
+    								.wsRowMessage
+										font-size 0.7em
+				.ResultsView
+					margin 46px auto 0px auto
+					height 89%
+					.resultsControlPanel
+						background-color #a5a7aa
+						height 48px
+
+						button
+							float right
+							position relative
+							right 20%
+							top 11px
+					.resultBoxList
+						overflow-y scroll
+						height 91%
+						width 70%
+						margin 0px auto
+
+						.resultBox
+							height 80px
+							border-bottom solid 1px #ccc
+							border-right solid 1px #ccc
+							border-left solid 1px #ccc
+							padding 10px 15px
+							display flex
+							
+							.checkResult
+								line-height 80px
+								font-size 20px
+								color #a5a7aa
+								cursor pointer
+							
+							figure
+								height 65px
+								width 65px
+								border-radius 20px
+								background-color white
+								overflow hidden
+								margin auto 15px
+								img
+									width 100%
+							.resultBoxInfoWrapper
+								
+											
+								.enterpriseNameResult
+									color #404041
+									text-transform capitalize
+									font-size 1.1em
+									margin 2px 0px
+								.enterpriseDescriptorResult
+									color #404041
+									text-transform capitalize
+									font-size 0.8em
+									font-weight 500
+				.entepriseprofileView
+					height 100%
+					display flex
+					overflow-y scroll
+					margin 46px auto 0px auto
+					.asideEnterpriseprofileView
+						width 350px
+						height 100%
+						.enterpriseImage
+							height 150px
+							width 150px
+							margin 20px
+							display inline-block
+							background-color white
+							img
+								width 100%
+					
+						.wrapperBtnHeaderEnterpriseView
+							float right
+							width 138px
+							display inline-block
+							margin 34px 21px 0px 0px
+							
+							button
+								width 100%
+								height 29px
+								border none
+								border-radius 4px
+								color white
+								font-size 0.9em
+								margin 3px 0px
+								padding 4px 0px 12px 0px
+
+							.btnAddEnterprise
+								margin-top 15px
+								background-color #24b6d2
+							.btnCalification
+								background-color #fc5d17
+							.btnQuotation
+								background-color #697a7f
+						.navigationEnterpriseprofileView
+							background-color white
+							margin 0px auto
+							width 89%
+							height 100%
+							background-color white
+							.navigationHeader
+								border-bottom solid 2px rgba(165, 167, 170, 0.26)
+								height auto
+								padding 18px 16px
+								
+								h1
+									color #404041
+									width 100%
+									display block
+									margin 0px auto 0px auto
+									text-transform uppercase
+									font-size 1.4em
+								h2
+									color #697a7f
+									text-transform capitalize
+									font-size 1.4em
+									font-weight 500
+
+
+							.btnEntepriseprofileNav
+								height 50px
+								cursor pointer
+								line-height 50px
+								padding 0px 15px
+								border-bottom solid 2px rgba(165, 167, 170, 0.26)
+								div
+									span
+										display inline
+										font-size 1.7em
+										color #a5a7aa
+										vertical-align middle
+										
+									p
+										display inline
+										font-size 1em
+										color #404041
+										margin 0px 0px 0px 15px
+										
+									.icoImg_clientes_proveedores
+										display inline-block
+										width 35px
+										margin 10px 0px 0px 0px
+										
+
+									.btnTextWithoutIco
+										position relative
+										top -11px
+
+					.contentEnterpriseprofileView
+						height 100%
+						width 68%
+						margin 20px 0px 0px 0px
+
+						.enterpriseprofileBanner
+							width 100%
+							height 170px
+							border solid 1px #ccc
+							overflow hidden
+							background-color white
+							img
+								width 100%
+						nav
+							background-color white
+							height 27px
+							width 100%
+							padding 12px 0px
+							
+							ul
+								list-style none
+								display flex
+								justify-content space-around
+								width 60%
+								margin 0px auto
+								li
+									border-left solid 2px #ccc
+									padding 2px 36px
+									height 19px
+									p
+										vertical-align middle
+										font-size 1em
+										color #a5a7aa
+									
+								.lastBtnNavEnterpriseContent
+									border-right solid 2px #ccc
+
+						.viewStageEnterpriseprofileComponents
+							height 100%
+							background-color white
+							margin 10px 0px
+							width 100%
+							.wrapperEnterpriseprofileContent
+								width 90%
+								margin 0px auto
+								padding 40px 0px
+
+
+								h3
+									width 100%
+									color #404041
+									margin 0px auto
+									font-size 1.5em
+									font-weight 600
+
+								.underline
+									background-color #ccc
+									display block
+									height 4px
+									width 60px
+									border-radius 8px
+									margin 9px 0px 7px 0px
+
+
+								.wrapperPunctuationIco, .wrapperEnterpriseTeam, .wrapperEnterpriseRelations
+									width 100%
+									justify-content space-between
+									display flex
+									list-style none
+									margin 40px auto 40px auto
+									min-height 40px
+
+								.wrapperPunctuationIco
+									li
+										p
+											text-align center
+											font-size 1em
+											font-weight 600
+											color #404041
+											
+										.punctuationIcon
+											font-size 5em
+											border solid 4px #24b6d2
+											border-radius 50%
+											color #404041
+											padding 11px
+											text-align center
+											vertical-align middle
+											display block
+											margin 13px auto
+											width 80px
+								.wrapperEnterpriseTeam
+									width 89%
+									li
+										img
+											border-radius 50%
+											width 80px
+											border solid 3px  #24b6d2
+										.btnSendMessage
+											font-size 0.8em
+											color #a5a7aa
+											cursor pointer
+											text-align center
+										.userName, .userPosition
+											color #404041
+											font-size 1em
+											font-weight inherit
+											text-align center
+
+								.wrapperEnterpriseRelations
+									li
+										figure
+											width 80px
+											height 80px
+											border solid 3px #24b6d2
+											border-radius 50%
+											overflow hidden
+											img
+												width 100%
+								.wrapperOffer
+									margin-top 20px
+									min-height 40px
+									.sellingline
+										font-size 1em
+								.wrapperEnterpriseInfoContact
+									margin-top 20px
+									ul
+										list-style none
+										li
+											width 100%
+											margin 2px 0px
+											
+											.infoContactIco
+												display inline-block
+												color #a5a7aa
+												font-size 0.8em
+												margin-right 15px
+											.info
+												display inline-block
+												color #a5a7aa
+												text-transform capitalize
+												font-size 1.1em
+												font-weight lighter
+											.legalId
+												display block
+												margin 0px 0px 0px 28px
+												
+
+			.principalLogginWrapper
+				h1
+					font-size 33px
+					font-weight 300
+					text-align center
+					max-width 750px
+					display block
+					margin 90px auto 50px auto
+				
+				.searchBox
+					max-width 1000px
+					margin 0px auto
+					border solid 1px #ccc
+					border-radius 8px
+					background-color white
+					overflow hidden
+
+					span
+						width 5% 
+						display inline-block
+						font-size 2em
+						vertical-align middle
+						text-align center
+						height 40px
+						background -webkit-linear-gradient(#f4791f,#ec4524)
+						-webkit-background-clip text
+						-webkit-text-fill-color transparent
+						color #ec4524
+						
+					input
+						width 95%
+						height 40px
+						text-align center
+						font-size 1.5em
+						border none
+						padding-bottom 5px
+
+				.wrapperBtnLoggin
+					background-color #e1ecef
+					height 100px
+					max-width 1000px
+					margin 100px auto 0px auto
+					border-radius 8px
+					display flex
+					justify-content space-around
+					flex-wrap wrap
+
+					
+					#btnLoginFacebook
+						background-color #1a75b5
+						.icon-circle_wrapper
+							background-color rgba(225, 236, 239, 0.22)
+							border-radius 50%
+
+					#btnLoginTwitter
+						background-color #00bdff
+						.icon-circle_wrapper
+							background-color rgba(225, 236, 239, 0.4)
+							border-radius 50%
+					#btnLoginLinkedin
+						background-color #0f5582
+						.icon-circle_wrapper
+							background-color rgba(225, 236, 239, 0.22)
+							border-radius 50%
+						
+					.btnLogin
+						text-decoration none
+						display block
+						margin 32px 0px 
+						height 37px
+						width 300px
+						border-radius 8px
+						color white
+						text-align center
+						
+						p, .ico-login, .icon-circle_wrapper
+							display inline-block
+							margin 0px 10px
+
+						.ico-login
+							font-size 1.3em
+							margin-top 8px
+
+						p
+							font-size 1em
+							position relative
+							top -3px
+						.icon-circle_wrapper
+							font-size 1.3em
+							width 20px
+							height 20px
