@@ -65,7 +65,7 @@ var io = (0, _socket2.default)(server);
 /* esto no debe estar harcodeado sino sacarlo de una variable DE ENTORNO l
    HAY Q SACARLO A UN ARCHIVO DE CONFIGURACION LA URL DE MONGOOSE
 */
-_mongoose2.default.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/bengala', function (err, res) {
+_mongoose2.default.connect(process.env.MONGODB_URI || 'mongodb://localhost/bengala', function (err, res) {
 	if (err) throw err;
 	console.log("conectado con exito a la base de datos");
 });

@@ -29,7 +29,7 @@ const io = socketio(server)
 /* esto no debe estar harcodeado sino sacarlo de una variable DE ENTORNO l
    HAY Q SACARLO A UN ARCHIVO DE CONFIGURACION LA URL DE MONGOOSE
 */
-mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/bengala', function(err, res){
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/bengala', function(err, res){
 	if(err) throw err;
 	console.log("conectado con exito a la base de datos");
 })
