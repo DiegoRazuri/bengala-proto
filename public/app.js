@@ -33490,7 +33490,7 @@ var BengalaApp = function (_React$Component) {
 		key: 'componentWillMount',
 		value: function componentWillMount() {
 			if (this.props.enterprise_data != undefined) {
-
+				console.log(this.props.enterprise_data);
 				this.loadAllCalls();
 			}
 		}
@@ -37075,6 +37075,9 @@ var Layout = function (_React$Component) {
 						if (res.workplaces.length > 0) {
 							// se debe recoorer y verificar que el en la primera q se encuentre con status 1 se muestre de lo contrario ha sido inactivada y no puede operar
 							_this2.state.selected_enterprise_info = res.workplaces[0].enterprise;
+							newInfo_selected_enterprise_info = _this2.state.selected_enterprise_info;
+						} else {
+							_this2.state.selected_enterprise_info = undefined;
 							newInfo_selected_enterprise_info = _this2.state.selected_enterprise_info;
 						}
 

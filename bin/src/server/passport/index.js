@@ -35,7 +35,7 @@ module.exports = function (passport) {
 	passport.use(new TwitterStrategy({
 		consumerKey: process.env.TWITTER_CONSUMER_KEY,
 		consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
-		callbackURL: 'https://bengala-proto.herokuapp.com/auth/twitter/callback'
+		callbackURL: process.env.TWITTER_CALLBACK_URI || 'http://localhost:3000/auth/twitter/callback'
 	}, function (token, tokenSecret, profile, done) {
 		//logica si el usuario es nuevo o no, si se le va a registrar, etc.
 		//pasamos el metodo done y el usuario ya esta autenticado.
@@ -61,7 +61,12 @@ module.exports = function (passport) {
   				})
   			}
   	    });
-    
+    /**************
+  			populate({
+  				path : 'workplaces',
+  				populate : { path : 'enterprise' }
+  			}).
+  ********************
   */
 		//ESTE QUERY ES APLICANDO POPULATE
 
@@ -98,7 +103,7 @@ module.exports = function (passport) {
 	passport.use(new FacebookStrategy({
 		clientID: process.env.FACEBOOK_APP_ID,
 		clientSecret: process.env.FACEBOOK_APP_SECRET,
-		callbackURL: 'https://bengala-proto.herokuapp.com/auth/facebook/callback',
+		callbackURL: process.env.FACEBOOK_CALLBACK_URI || 'http://localhost:3000/auth/facebook/callback',
 		profileFields: ['id', 'first_name', 'photos', 'email', 'last_name']
 	}, function (token, refreshToken, profile, done) {
 		//logica si el usuario es nuevo o no, si se le va a registrar, etc.
@@ -185,7 +190,7 @@ module.exports = function (passport) {
 		consumerKey: process.env.LINKEDIN_API_KEY,
 		consumerSecret: process.env.LINKEDIN_SECRET_KEY,
 		//callbackURL: 'http://localhost:3000/auth/linkedin/callback',
-		callbackURL: 'https://bengala-proto.herokuapp.com/auth/linkedin/callback',
+		callbackURL: process.env.LINKEDIN_CALLBACK_URI || 'http://localhost:3000/auth/linkedin/callback',
 		profileFields: ['id', 'first-name', 'last-name', 'email-address', 'headline', 'picture-url']
 	}, function (token, tokenSecret, profile, done) {
 		//logica si el usuario es nuevo o no, si se le va a registrar, etc.

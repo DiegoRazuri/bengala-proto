@@ -291,7 +291,7 @@ export default class BengalaApp extends React.Component{
 
 	componentWillMount(){
 		if(this.props.enterprise_data != undefined){
-			
+			console.log(this.props.enterprise_data)
 			this.loadAllCalls();
 		}
 

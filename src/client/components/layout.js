@@ -42,6 +42,9 @@ export default class Layout extends React.Component{
 	            		this.state.selected_enterprise_info = res.workplaces[0].enterprise;
 	            		newInfo_selected_enterprise_info = this.state.selected_enterprise_info
 
+	            	}else{
+	            		this.state.selected_enterprise_info = undefined
+	            		newInfo_selected_enterprise_info = this.state.selected_enterprise_info
 	            	}
 
 	            	this.setState({
