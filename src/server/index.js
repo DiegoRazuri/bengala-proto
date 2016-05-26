@@ -138,7 +138,7 @@ io.on('connection', (socket)=>{
 	//luego tengo q hacer el envio pero cuando es una nueva ws
 });
 */
-server.listen(process.env.PORT || 3000, () => console.log("servidor iniciado"))
+server.listen(process.env.PORT || 3000, () => console.log("servidor iniciado"+ process.env.FACEBOOK_CALLBACK_URI))
 /*
 PORT=3000 LINKEDIN_SECRET_KEY=sUuJfZcShRm6MbrX LINKEDIN_API_KEY=771w9ponelb7k0 FACEBOOK_APP_ID=715593598509472 FACEBOOK_APP_SECRET=4b82d62979632cb84e84aca91a1693a8  TWITTER_CONSUMER_KEY=4EUcaY9Er9G0ACtZ9DwjAjvOS TWITTER_CONSUMER_SECRET=3gHfGvQXFCOONrFLdBInVY2Jd98flwEdXimwLVJxEJSR1HySGG npm run start
 ** con los accesos a S3 AWS

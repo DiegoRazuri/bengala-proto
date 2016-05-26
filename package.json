@@ -47,7 +47,7 @@
     "copy-files": "cp src/client/main.css public/app.css && cp src/client/index.html public/index.html && cp src/client/fonts/icomoon.eot public/fonts/icomoon.eot && cp src/client/fonts/icomoon.svg public/fonts/icomoon.svg && cp src/client/fonts/icomoon.ttf public/fonts/icomoon.ttf && cp src/client/fonts/icomoon.woff public/fonts/icomoon.woff",
     "build-styles": "npm run public && npm run fonts && npm run copy-files",
     "build": "npm run public && npm run fonts && npm run build-js && npm run copy-files",
-    "dist": "babel src/server/index.js src/server/**/**/*.js --out-dir bin --presets es2015",
+    "dist": "babel src/server/index.js src/server/**/*.js --out-dir bin --presets es2015",
     "serve": "NODE_PATH=. babel-node src/server --presets es2015",
     "start-without-js": "npm run build-styles && npm run serve",
     "start": "npm run build && npm run serve"
