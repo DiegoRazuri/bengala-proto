@@ -73,13 +73,7 @@ router.get('/search/:word', jsonParser, function (req, res){
 			{$group: {
 				_id: "$_id",
 				profileImage: {$first : "$profileImage" },
-				//este price debo quitarlo
-//				price : {$avg : '$scores.price_rating'},
-				//este legalId debo quitarlo
-//				client : {$first : '$client'},
-				//este scores debo quitarlo
 				scores : {$first : '$scores'},
-//				employees : {$first : '$employees'},
 				descriptor: {$first : "$descriptor" },
 				companyName: {$first : "$companyName" },
 				total_average : { $avg : { $avg : ["$scores.price_rating", "$scores.quality_rating", "$scores.punctuality_rating", "$scores.customer_support_rating"] } },
@@ -89,7 +83,7 @@ router.get('/search/:word', jsonParser, function (req, res){
 
 		], (err, enterprise) => {
 			if (err){
-				
+
 				return res.sendStatus(500).json(err);
 			}
 /*

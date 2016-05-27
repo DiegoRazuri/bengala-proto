@@ -105,21 +105,16 @@ router.get('/search/:word', jsonParser, function (req, res) {
 	//{$project : { companyName: 1, scores : 1, searchKeywords : 1}},
 	//{$match: {searchKeywords: regex}},
 	// PRESUMO QUE EN LA CONCATENACION EL VALOR DE BUSSINEESNAME Y DEMAS SON UNDEFINED ENTONCES SE DEBERIAN EXCLUIR AL HACER LA BUSQUEDA DE SER ASI PARA MEJORAR LA PERFORMANCE
-	{ $project: { fulltextsearch: { $concat: ['$companyName', ' ', '$businessName', ' ', '$industry', ' ', '$searchKeywords', ' '] }, companyName: 1, profileImage: 1, descriptor: 1, scores: 1 } }, { $match: { fulltextsearch: regex } }, { $unwind: "$scores" }, { $group: {
+	{ $project: { fulltextsearch: { $concat: ['$companyName', ' ', '$businessName', ' ', '$industry', ' '] }, companyName: 1, profileImage: 1, descriptor: 1, scores: 1 } }, { $match: { fulltextsearch: regex } }, { $unwind: "$scores" }, { $group: {
 			_id: "$_id",
 			profileImage: { $first: "$profileImage" },
-			//este price debo quitarlo
-			//				price : {$avg : '$scores.price_rating'},
-			//este legalId debo quitarlo
-			//				client : {$first : '$client'},
-			//este scores debo quitarlo
 			scores: { $first: '$scores' },
-			//				employees : {$first : '$employees'},
 			descriptor: { $first: "$descriptor" },
 			companyName: { $first: "$companyName" },
 			total_average: { $avg: { $avg: ["$scores.price_rating", "$scores.quality_rating", "$scores.punctuality_rating", "$scores.customer_support_rating"] } }
 		} }, { $sort: { total_average: -1 } }], function (err, enterprise) {
 		if (err) {
+
 			return res.sendStatus(500).json(err);
 		}
 		/*
