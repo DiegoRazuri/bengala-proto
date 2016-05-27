@@ -67,7 +67,7 @@ router.get('/search/:word', jsonParser, function (req, res){
 			//{$project : { companyName: 1, scores : 1, searchKeywords : 1}},
 			//{$match: {searchKeywords: regex}},
 			// PRESUMO QUE EN LA CONCATENACION EL VALOR DE BUSSINEESNAME Y DEMAS SON UNDEFINED ENTONCES SE DEBERIAN EXCLUIR AL HACER LA BUSQUEDA DE SER ASI PARA MEJORAR LA PERFORMANCE
-			{$project : { fulltextsearch : {$concat : ['$companyName', ' ', '$businessName', ' ', '$industry', ' ', '$searchKeywords', ' ']}, companyName : 1, profileImage : 1, descriptor : 1, scores : 1}},
+			{$project : { fulltextsearch : {$concat : ['$companyName', ' ', '$businessName', ' ', '$industry', ' ']}, companyName : 1, profileImage : 1, descriptor : 1, scores : 1}},
 			{$match: {fulltextsearch: regex}},
 			{$unwind: "$scores"},
 			{$group: {
@@ -89,6 +89,7 @@ router.get('/search/:word', jsonParser, function (req, res){
 
 		], (err, enterprise) => {
 			if (err){
+				
 				return res.sendStatus(500).json(err);
 			}
 /*
