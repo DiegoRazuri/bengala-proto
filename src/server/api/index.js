@@ -67,7 +67,8 @@ router.get('/search/:word', jsonParser, function (req, res){
 			//{$project : { companyName: 1, scores : 1, searchKeywords : 1}},
 			//{$match: {searchKeywords: regex}},
 			// PRESUMO QUE EN LA CONCATENACION EL VALOR DE BUSSINEESNAME Y DEMAS SON UNDEFINED ENTONCES SE DEBERIAN EXCLUIR AL HACER LA BUSQUEDA DE SER ASI PARA MEJORAR LA PERFORMANCE
-			{$project : { fulltextsearch : {$concat : ['$companyName', ' ', '$businessName', ' ', '$industry', ' ']}, companyName : 1, profileImage : 1, descriptor : 1, scores : 1}},
+//			{$project : { fulltextsearch : {$concat : ['$companyName', ' ', '$businessName', ' ', '$industry', ' ', '$searchKeywords', ' ']}, companyName : 1, profileImage : 1, descriptor : 1, scores : 1}},
+			{$project : { fulltextsearch : {$concat : ['$companyName', ' ', '$businessName']}, companyName : 1, profileImage : 1, descriptor : 1, scores : 1}},
 			{$match: {fulltextsearch: regex}},
 			{$unwind: "$scores"},
 			{$group: {
@@ -83,33 +84,9 @@ router.get('/search/:word', jsonParser, function (req, res){
 
 		], (err, enterprise) => {
 			if (err){
-
 				return res.sendStatus(500).json(err);
 			}
-/*
-		Enterpriseprofiles.aggregate([
-			//{$project : { companyName: 1, scores : 1, searchKeywords : 1}},
-			//{$match: {searchKeywords: regex}},
-			// PRESUMO QUE EN LA CONCATENACION EL VALOR DE BUSSINEESNAME Y DEMAS SON UNDEFINED ENTONCES SE DEBERIAN EXCLUIR AL HACER LA BUSQUEDA DE SER ASI PARA MEJORAR LA PERFORMANCE
-			{$project : { fulltextsearch : {$concat : ['$companyName', ' ', '$businessName', ' ', '$industry', ' ', '$searchKeywords']}, companyName : 1, profileImage : 1, descriptor : 1}},
-			{$match: {fulltextsearch: regex}},
-//			{$unwind: "$scores"},
-			{$group: {
-				_id: "$_id",
-				profileImage: {$first : "$profileImage" },
-				descriptor: {$first : "$descriptor" },
-				companyName: {$first : "$companyName" },
-//				total_average : { $avg : { $avg : ["$scores.price_rating", "$scores.quality_rating", "$scores.punctuality_rating", "$scores.customer_support_rating"] } },
-			}}
-//			{ $sort : { total_average : -1 }},
 
-
-		], (err, enterprise) => {
-			if (err){
-
-				return res.sendStatus(500).json(err);
-			}
-*/
 // SE DEBE AGREGAR UN POPULATE EN LA LINEA 66 PARA AGREGAR EL WORKPLACE DEL USUARIO
 			Userprofiles.aggregate([
 				{$project : { fullname : {$concat : ['$name', ' ', '$lastname']}, photo :1, position:1 }},
