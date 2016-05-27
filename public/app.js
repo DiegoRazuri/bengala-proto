@@ -36239,7 +36239,7 @@ var EnterpriseScoreWidget = function (_React$Component) {
 			for (var i = 1; i <= num; i++) {
 				points.push(_react2.default.createElement(
 					"li",
-					null,
+					{ key: i },
 					_react2.default.createElement("span", { className: "icon-heart heart" })
 				));
 			}

@@ -16,7 +16,7 @@ export default class EnterpriseScoreWidget extends React.Component{
 		let halfHeart = <li><span className="icon-heart halfHeart"></span></li>
 
 		for(let i = 1; i <= num; i++){
-			points.push(<li><span className="icon-heart heart"></span></li>)
+			points.push(<li key={i}><span className="icon-heart heart"></span></li>)
 		}
 
 
