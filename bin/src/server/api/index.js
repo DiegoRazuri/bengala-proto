@@ -114,6 +114,8 @@ router.get('/search/:word', jsonParser, function (req, res) {
 			companyName: { $first: "$companyName" },
 			total_average: { $avg: { $avg: ["$scores.price_rating", "$scores.quality_rating", "$scores.punctuality_rating", "$scores.customer_support_rating"] } }
 		} }, { $sort: { total_average: -1 } }], function (err, enterprise) {
+		console.log(enterprise);
+		console.log(err);
 		if (err) {
 			return res.sendStatus(500).json(err);
 		}

@@ -83,6 +83,8 @@ router.get('/search/:word', jsonParser, function (req, res){
 
 
 		], (err, enterprise) => {
+			console.log(enterprise)
+			console.log(err)
 			if (err){
 				return res.sendStatus(500).json(err);
 			}
