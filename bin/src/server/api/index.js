@@ -90,7 +90,9 @@ router.get('/usersession', jsonParser, function (req, res) {
 router.get('/search/:word', jsonParser, function (req, res) {
 	if (!req.body) return res.sendStatus(400);
 
+	console.log("ultimo cambio 1");
 	console.log(req.params.word);
+
 	var regex = new RegExp(req.params.word, 'i');
 
 	/*============********    ADVERTENCIA     ******=========================*/
