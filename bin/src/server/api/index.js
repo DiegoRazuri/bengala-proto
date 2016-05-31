@@ -112,8 +112,18 @@ router.get('/search/:word', jsonParser, function (req, res) {
 			scores: { $first: '$scores' },
 			descriptor: { $first: "$descriptor" },
 			companyName: { $first: "$companyName" },
-			total_average: { $avg: { $avg: ["$scores.price_rating", "$scores.quality_rating", "$scores.punctuality_rating", "$scores.customer_support_rating"] } }
-		} }, { $sort: { total_average: -1 } }], function (err, enterprise) {
+			price_avg: { $avg: "$scores.price_rating" },
+			quality_avg: { $avg: "$scores.quality_rating" },
+			punctuality_avg: { $avg: "$scores.punctuality_rating" },
+			customer_support_avg: { $avg: "$scores.customer_support_rating" }
+		} }, { $project: {
+			_id: 1,
+			total_average: { $avg: ["$price_avg", "$quality_avg", "$punctuality_avg", "$customer_support_avg"] },
+			profileImage: 1,
+			descriptor: 1,
+			companyName: 1
+		}
+	}, { $sort: { total_average: -1 } }], function (err, enterprise) {
 		console.log(enterprise);
 		console.log(err);
 		if (err) {

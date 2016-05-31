@@ -86,10 +86,9 @@ router.get('/search/:word', jsonParser, function (req, res){
 				{
 					_id:1, 
 					total_average :{ $avg : ["$price_avg", "$quality_avg", "$punctuality_avg", "$customer_support_avg"]},
-					profileImage: {$first : "$profileImage" },
-					scores : {$first : '$scores'},
-					descriptor: {$first : "$descriptor" },
-					companyName: {$first : "$companyName" }
+					profileImage: 1,
+					descriptor: 1,
+					companyName: 1
 				}
 			},
 			{ $sort : { total_average : -1 }},
