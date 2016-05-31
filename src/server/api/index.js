@@ -51,7 +51,7 @@ router.get('/usersession', jsonParser, function ( req, res ){
 router.get('/search/:word', jsonParser, function (req, res){
 	if (!req.body) return res.sendStatus(400)
 
-		console.log("ultimo cambio 1")
+		console.log("ultimo cambio 2")
 		console.log(req.params.word)
 
 		let regex = new RegExp(req.params.word, 'i');
@@ -86,7 +86,8 @@ router.get('/search/:word', jsonParser, function (req, res){
 			{$project: 
 				{
 					_id:1, 
-					total_average :{ $avg : ["$price_avg", "$quality_avg", "$punctuality_avg", "$customer_support_avg"]},
+					//total_average :{ $avg : ["$price_avg", "$quality_avg", "$punctuality_avg", "$customer_support_avg"]},
+
 					profileImage: 1,
 					descriptor: 1,
 					companyName: 1
